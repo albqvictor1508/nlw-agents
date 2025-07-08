@@ -11,6 +11,6 @@ app.get("/health", (): string => {
   return "OK";
 })
 
-app.listen({ port: Number(env.PORT) }).then((): void => {
+app.listen({ port: Number(env.PORT) ?? 3333 }).then((): void => {
   console.log("HTTP Server running!");
 })
