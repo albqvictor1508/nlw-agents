@@ -1,0 +1,10 @@
+services:
+  pg:
+    container_name: "pgvector"
+    image: pgvector/pgvector:pg17
+    ports:
+    - "7800:5432"
+    env_file: .env
+    volumes:
+    - ./docker/setup.sql:/docker/entrypoint-init-db.d/setup.sql
+
