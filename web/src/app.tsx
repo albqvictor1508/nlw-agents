@@ -1,8 +1,14 @@
 import './App.css'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { CreateRoom } from './pages-create-room';
 
 export function App() {
   return (
-    <div>Hello World</div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/room" element={<CreateRoom />} />
+      </Routes>
+    </BrowserRouter>
   )
 };
 
