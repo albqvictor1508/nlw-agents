@@ -1,4 +1,12 @@
 import postgres from "postgres";
-import { env } from "../src/common/env";
+import { drizzle } from "drizzle-orm/postgres-js"
+import { schema } from "./schema/index.ts"
+import { env } from "../common/env.ts";
 
-const client = postgres(env.DATABASE_URL);
+const pg = postgres(env.DATABASE_URL);
+
+export const db = drizzle(pg, {
+  schema,
+  casing: "snake_case"
+});
+
